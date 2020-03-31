@@ -1,0 +1,12 @@
+{
+    "extends": "./configs/ts.base",
+    "compilerOptions": {
+        "watch":true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "files": [
+      "./src/index.ts"
+    ]
+  }

@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowUmdGlobalAccess": true,
+        "alwaysStrict": true,
+        "assumeChangesOnlyAffectDirectDependencies": true,
+        "checkJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "locale": "zh-CN",
+        "lib": [],
+        "target": "ES2015",
+        "strictNullChecks": true,
+        "typeRoots" : ["./node_modules/@types", "./typings"],
+        "outDir":"../lib"
+        
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
