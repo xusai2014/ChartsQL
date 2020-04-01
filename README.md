@@ -1,5 +1,5 @@
 # ChartsQL
-图表数据查询接口服务，GranphQL做数据转换。
+图表数据查询接口服务，GranphQL数据转换。
 
 
 ### 目录结构
@@ -50,6 +50,7 @@ Apollo Server provides:
 
 
 ### 应用场景指导
+
 To get the most out of GraphQL, your organization should expose a single data graph that provides a unified interface for querying all of your backing data sources. This allows clients to fetch data from any number of sources simultaneously, without needing to know which data comes from which source.
 
 As your data graph grows, however, it can become inefficient or even difficult to represent the graph with a single, monolithic GraphQL server. To remedy this, you can divide your data graph's implementation across multiple composable services with Apollo Federation.
