@@ -4,17 +4,23 @@
   "description": "图表数据查询接口服务，GranphQL做数据转换。",
   "main": "index.js",
   "dependencies": {
+    "@graphql-codegen/typescript-document-nodes": "^1.13.1",
     "apollo-datasource-rest": "^0.8.0",
     "apollo-server": "^2.11.0",
     "graphql": "^14.6.0",
+    "graphql-import-node": "0.0.4",
     "ts-node": "^8.8.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "ts-graphql-plugin": "^1.10.2",
+    "ts-transform-graphql-tag": "^0.2.1"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node src/index.ts"
+    "dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node src/index.ts",
+    "debug": "./node_modules/.bin/ts-node $NODE_DEBUG_OPTION src/index.ts",
+    "build": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",

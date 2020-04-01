@@ -12,15 +12,6 @@
         "lib": [],
         "target": "ES2015",
         "strictNullChecks": true,
-        "typeRoots" : ["./node_modules/@types", "./typings"],
         "outDir":"../lib"
-        
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "**/*.spec.ts"
-    ]
+    }
 }

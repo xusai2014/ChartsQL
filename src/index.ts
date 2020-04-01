@@ -1,6 +1,8 @@
-/// <reference path="../typings/global.d.ts" />
+
+import 'graphql-import-node';
 import { ApolloServer } from 'apollo-server';
-import * as cardGql from './gqls/card.gql';
+import cardGql from './gqls/card.gql';
+
 
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
@@ -35,8 +37,8 @@ const resolvers = {
     },
   };
 
-const server = new ApolloServer({ 
-  typeDefs, 
+const server = new ApolloServer({
+  typeDefs,
   resolvers,
   context: (integrationContext) => ({
     // Important: The `integrationContext` argument varies depending
@@ -46,7 +48,7 @@ const server = new ApolloServer({
     // For example, using Express's `authorization` header, and a
     // `getScope` method (intentionally left unspecified here):
     // authScope: getScope(integrationContext.req.headers.authorization)
-  }), 
+  }),
 
 });
 

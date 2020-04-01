@@ -1,13 +1,11 @@
 {
-    "extends": "./configs/ts.base",
+    "extends": "./configs/ts.base.json",
     "compilerOptions": {
+        "target": "es5",
         "watch":true,
         "typeRoots":["./node_modules/@types","./typings"]
     },
     "include": [
         "src/**/*"
-    ],
-    "files": [
-      "./src/index.ts"
     ]
-  }
+}
