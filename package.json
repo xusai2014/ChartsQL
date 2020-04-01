@@ -2,7 +2,7 @@
   "name": "chartsql",
   "version": "1.0.0",
   "description": "图表数据查询接口服务，GranphQL做数据转换。",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "dependencies": {
     "@graphql-codegen/typescript-document-nodes": "^1.13.1",
     "apollo-datasource-rest": "^0.8.0",

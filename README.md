@@ -1,9 +1,15 @@
 # ChartsQL
 图表数据查询接口服务，GranphQL做数据转换。
 
-### 技术栈
-GranphQL解决方案
-typescript、appolo技术选型
+
+### 开发配置
+- ts-node + nodemon (热开发配置)
+- graphql-import-node (import引入gql template)
+- apollo-server
+
+
+### GranphQL解决方案
+- 基于typescript，appolo granphQl的接口改造方案
 
 Apollo Server is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client, including Apollo Client. It's the best way to build a production-ready, self-documenting GraphQL API that can use data from any source.
 
@@ -11,10 +17,10 @@ Apollo Server is an open-source, spec-compliant GraphQL server that's compatible
 <img src="./docs/asserts/index-diagram.svg">
 </div>
 
-You can use Apollo Server as:
-- A stand-alone GraphQL server, including in a serverless environment
-- An add-on to your application's existing Node.js middleware (such as Express or Fastify)
-- A gateway for a federated data graph
+Apollo Server可使用的特性:
+- 独立的GraphQL服务，包括在serverless环境中
+- 对应用中现存的nodeJS中间件即插即用（例如支持express、fastify）
+- 联邦数据图的网关
 
 Apollo Server provides:
 - Straightforward setup, so your client developers can start fetching data quickly
