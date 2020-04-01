@@ -29,8 +29,8 @@ const resolvers = {
     Query: {
         books: () => books,
         imgUrl: async (_source, _args, {dataSources}) => {
-            const result =  await dataSources.loginAPI.getKaptcha();
 
+            const result =  await dataSources.loginAPI.getKaptcha();
             return result;
         }
     },
@@ -58,10 +58,6 @@ const server = new ApolloServer({
       // Important: The `integrationContext` argument varies depending
       // on the specific integration (e.g. Express, Koa,  Lambda, etc.)
       // being used. See the table below for specific signatures.
-
-
-        "Content-Type": "application/json"
-
     }),
 
 });

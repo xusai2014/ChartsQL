@@ -12,13 +12,13 @@ class LoginAPI extends RESTDataSource {
     host = 'https://bigdata.autohome.com.cn';
 
     async getKaptcha() {
-        return this.get(`/defaultKaptcha?code=` + Math.random());
+        // 卧槽 我差点二了
+        return this.baseURL + `/defaultKaptcha?code=` + Math.random();
     }
 
     async errorFromResponse(response) {
         return new ApolloError('卧槽！我错了')
     }
-
 
     async loginWithPwd(account, pwd, captcha) {
         return this.post(`/userlogin`, {

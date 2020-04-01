@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev": "./node_modules/.bin/nodemon src/index.ts",
-    "debug": "./node_modules/.bin/nodemon --inspect src/index.ts",
+    "debug": "node $NODE_DEBUG_OPTION  --require ts-node/register src/index.ts",
     "build": "./node_modules/.bin/tsc"
   },
   "repository": {
