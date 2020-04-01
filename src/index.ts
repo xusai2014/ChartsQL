@@ -1,7 +1,7 @@
 
 import 'graphql-import-node';
 import { ApolloServer } from 'apollo-server';
-import cardGql from './gqls/card.gql';
+import cardGql from '../gqls/card.gql';
 
 
 // A schema is a collection of type definitions (hence "typeDefs")

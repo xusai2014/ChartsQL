@@ -2,8 +2,14 @@
     "extends": "./configs/ts.base.json",
     "compilerOptions": {
         "target": "es5",
-        "watch":true,
-        "typeRoots":["./node_modules/@types","./typings"]
+        "typeRoots":["./node_modules/@types","./typings"],
+        "plugins": [
+            {
+                "name": "ts-graphql-plugin",
+                "schema": "./src/gqls/card.gql",
+                "tag": "gql"
+            }
+        ]
     },
     "include": [
         "src/**/*"
