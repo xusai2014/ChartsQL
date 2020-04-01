@@ -2,6 +2,26 @@
 图表数据查询接口服务，GranphQL做数据转换。
 
 
+### 目录结构
+```
+----- ggls // gql文件
+  |
+  |-- src  // typescript语法开发目录
+  |
+  |-- lib  // typescript转译es5
+  |
+  |-- typings // 定义
+  |
+  |-- docs   // 文档
+  |
+  |-- config // 配置文件
+  |
+  |-- tsconfig.json
+  |
+  |-- package.json
+
+```
+
 ### 开发配置
 - ts-node + nodemon (热开发配置)
 - graphql-import-node (import引入gql template)
