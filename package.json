@@ -18,8 +18,8 @@
     "ts-transform-graphql-tag": "^0.2.1"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node src/index.ts",
-    "debug": "./node_modules/.bin/ts-node $NODE_DEBUG_OPTION src/index.ts",
+    "dev": "./node_modules/.bin/nodemon src/index.ts",
+    "debug": "./node_modules/.bin/nodemon --inspect src/index.ts",
     "build": "./node_modules/.bin/tsc"
   },
   "repository": {
@@ -38,6 +38,9 @@
       "docs/*"
     ],
     "delay": "2500",
+    "execMap": {
+      "ts": "node  --require ts-node/register"
+    },
     "watch": [
       "./src",
       "./gqls"

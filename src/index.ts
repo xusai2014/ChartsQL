@@ -1,58 +1,72 @@
-
 import 'graphql-import-node';
-import { ApolloServer } from 'apollo-server';
+import {ApolloServer,makeExecutableSchema} from 'apollo-server';
 import cardGql from '../gqls/card.gql';
+import loginGql from '../gqls/login.gql';
+import queryGql from '../gqls/query.gql';
+import {LoginAPI} from "./dataSource";
 
-
-// A schema is a collection of type definitions (hence "typeDefs")
-// that together define the "shape" of queries that are executed against
-// your data.
-const typeDefs = cardGql
 
 const books = [
     {
-      title: 'Harry Potter and the Chamber of Secrets',
-      author: 'J.K. Rowling',
+        title: 'Harry Potter and the Chamber of Secrets',
+        author: 'J.K. Rowling',
     },
     {
-      title: 'Jurassic Park',
-      author: 'Michael Crichton',
+        title: 'Jurassic Park',
+        author: 'Michael Crichton',
     },
     {
-      title: 'Jerry',
-      author: 'Michael Crichton',
+        title: 'Jerry',
+        author: 'Michael Crichton',
     },
     {
-      title: 'Jerry xu',
-      author: 'Michael Crichton',
+        title: 'Jerry xu',
+        author: 'Michael Crichton',
     },
-  ];
+];
 
-
-  // Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
     Query: {
-      books: () => books,
+        books: () => books,
+        imgUrl: async (_source, _args, {dataSources}) => {
+            const result =  await dataSources.loginAPI.getKaptcha();
+
+            return result;
+        }
     },
-  };
+};
+
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: (integrationContext) => ({
-    // Important: The `integrationContext` argument varies depending
-    // on the specific integration (e.g. Express, Koa,  Lambda, etc.)
-    // being used. See the table below for specific signatures.
+    schema:makeExecutableSchema({
+        typeDefs: [queryGql, loginGql, cardGql ],
+        resolvers,
+    }),
+    formatError: (err) => {
+        // Don't give the specific errors to the client.
+        if (err.message.startsWith("Database Error: ")) {
+            return new Error('Internal server error');
+        }
+        return err;
+    },
+    introspection: true,
+    dataSources: () => ({
+        loginAPI: new LoginAPI(),
+    }),
+    onHealthCheck:()=>(new Promise(()=>{})),
+    context: (integrationContext) => ({
+      // Important: The `integrationContext` argument varies depending
+      // on the specific integration (e.g. Express, Koa,  Lambda, etc.)
+      // being used. See the table below for specific signatures.
 
-    // For example, using Express's `authorization` header, and a
-    // `getScope` method (intentionally left unspecified here):
-    // authScope: getScope(integrationContext.req.headers.authorization)
-  }),
+
+        "Content-Type": "application/json"
+
+    }),
 
 });
 
 // The `listen` method launches a web server.
-server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+server.listen().then(({url,...rest}) => {
+    console.log(`🚀  Server ready at ${url}`,);
 });
