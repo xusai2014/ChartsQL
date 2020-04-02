@@ -1,3 +1,13 @@
 extend type Query {
     imgUrl: String
 }
+
+input LoginForm {
+     username: String
+     password: String
+     captcha: String
+}
+
+extend type Mutation {
+    loginPwd(loginForm:LoginForm):Boolean
+}
