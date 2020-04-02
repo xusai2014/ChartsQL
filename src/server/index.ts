@@ -28,7 +28,7 @@ const server = new ApolloServer({
 
 });
 
-server.applyMiddleware()
+//server.applyMiddleware()
 
 // The `listen` method launches a web server.
 server.listen().then(({url, ...rest}) => {

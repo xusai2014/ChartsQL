@@ -9,7 +9,7 @@ class LoginAPI extends RESTDataSource {
         this.baseURL = `${this.host}/login`;
     }
 
-    host = 'https://bigdata.autohome.com.cn';
+    host = '';
 
     async getKaptcha() {
         // 卧槽 我差点二了
