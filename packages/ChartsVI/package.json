@@ -27,6 +27,8 @@
     "url": "https://github.com/xusai2014/ChartsQL/issues"
   },
   "dependencies": {
+    "react": "^16.13.1",
     "rollup": "^2.3.2"
-  }
+  },
+  "gitHead": "167fb1889299a4ce56714904fc66f80674158251"
 }

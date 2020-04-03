@@ -10,7 +10,6 @@
         "experimentalDecorators": true,
         "locale": "zh-CN",
         "module": "commonjs",
-        "lib": [],
         "target": "ESNext",
         "strictNullChecks": true,
         "outDir":"../lib"

@@ -21,9 +21,14 @@
     "url": "git+https://github.com/xusai2014/ChartsQL.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "dev": "jAuto serve ./"
   },
   "bugs": {
     "url": "https://github.com/xusai2014/ChartsQL/issues"
+  },
+  "gitHead": "167fb1889299a4ce56714904fc66f80674158251",
+  "dependencies": {
+    "j-auto": "^1.1.5",
+    "react": "^16.13.1"
   }
 }
