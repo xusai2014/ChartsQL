@@ -5,6 +5,7 @@
         "alwaysStrict": true,
         "assumeChangesOnlyAffectDirectDependencies": true,
         "checkJs": true,
+        "jsx":"react",
         "skipLibCheck": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,

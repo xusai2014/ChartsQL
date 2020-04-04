@@ -2,15 +2,17 @@ import * as React from 'react';
 import {render} from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from '@apollo/react-hooks';
+import Books from './pages/books.tsx';
 
 const client = new ApolloClient({
-    uri: 'https://48p1r2roz4.sse.codesandbox.io',
+    uri: 'http://localhost:4000/graphql',
 });
 
 const App = () => (
     <ApolloProvider client={client}>
         <div>
             <h2>My first Apollo app 🚀</h2>
+            <Books></Books>
         </div>
     </ApolloProvider>
 );

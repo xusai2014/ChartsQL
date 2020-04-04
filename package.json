@@ -18,13 +18,17 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^4.0.4",
     "lerna": "^3.20.2",
     "nodemon": "^2.0.2",
     "ts-graphql-plugin": "^1.10.2",
-    "ts-transform-graphql-tag": "^0.2.1"
+    "ts-loader": "^6.2.2",
+    "ts-transform-graphql-tag": "^0.2.1",
+    "webpack": "^4.42.1",
+    "webpack-dev-middleware": "^3.7.2"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon src/server/index.ts",
+    "dev": "./node_modules/.bin/nodemon src/client/devServer.ts",
     "debug": "node $NODE_DEBUG_OPTION  --require ts-node/register src/index.ts",
     "build": "./node_modules/.bin/tsc",
     "start": ""
@@ -52,6 +56,6 @@
       "./src",
       "./gqls"
     ],
-    "ext": "ts gql js"
+    "ext": "ts tsx gql js"
   }
 }
