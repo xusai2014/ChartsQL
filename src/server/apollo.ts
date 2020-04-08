@@ -2,6 +2,11 @@ import 'graphql-import-node';
 import {ApolloServer} from 'apollo-server-express';
 import {LoginAPI} from "./dataSource";
 import GQLSchema from "./schema";
+import HeatMapData from './dataSource/heatmap'
+import { MongoClient } from 'mongodb';
+const client = new MongoClient('mongodb://localhost:27017/test',
+    { useNewUrlParser: true, useUnifiedTopology: true })
+client.connect()
 
 const server = new ApolloServer({
     schema: GQLSchema,
@@ -15,6 +20,7 @@ const server = new ApolloServer({
     introspection: true,
     dataSources: () => ({
         loginAPI: new LoginAPI(),
+        heatmapAPI:new HeatMapData(client.db().collection('heatmap'))
     }),
     context: (integrationContext) => ({
         // Important: The `integrationContext` argument varies depending
