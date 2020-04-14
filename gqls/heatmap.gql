@@ -1,0 +1,15 @@
+type HeatMap {
+    position:String
+}
+
+input HeatMapParams {
+    position:String
+}
+
+extend type Mutation{
+    addHeatMap(params:HeatMapParams):Boolean
+}
+
+extend type Query{
+    heatmaps:[HeatMap]
+}

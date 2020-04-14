@@ -23,6 +23,9 @@ const webpackConfig = {
       },
     ]
   },
+  resolve: {
+    extensions: [".ts", ".json", ".tsx", ".css"],
+  },
   plugins:[
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -68,6 +71,6 @@ app.use(
 apollo.applyMiddleware({ app,});
 
 // The `listen` method launches a web server.
-app.listen({ port: 4000 },()=>{
+app.listen({ port: 3001 },()=>{
     console.log(`🚀  Server ready at http://localhost:4000${apollo.graphqlPath}`,);
 })

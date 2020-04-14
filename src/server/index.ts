@@ -31,6 +31,6 @@ const server = new ApolloServer({
 //server.applyMiddleware()
 
 // The `listen` method launches a web server.
-server.listen().then(({url, ...rest}) => {
+server.listen({port:80}).then(({url, ...rest}) => {
     console.log(`🚀  Server ready at ${url}`,);
 });
