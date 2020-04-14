@@ -36,16 +36,6 @@ start() {
       #CMD="nohup node hello.js > ${AONE_LOG_PATH}/${APP_NAME}.log 2>&1 &"
       CMD="$APP_NAME start ./lib/server/index.js --name ChartsQL"
       sh -c "$CMD"
-      checkpid
-      if [ $pid -ne 0 ]; then
-         echo "(pid=$pid) [OK]"
-         exit 0
-      else
-         echo "(pid=$pid) [Failed]"
-         echo "[Failed]"
-         ps -ef
-         exit 1
-      fi
    fi
 }
 
