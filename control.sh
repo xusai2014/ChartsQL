@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #应用名
-APP_NAME=pm2
+APP_NAME=pm2-runtime
 
 #应用根目录
 APP_HOME=${AONE_APP_PATH}/
