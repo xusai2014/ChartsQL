@@ -24,6 +24,6 @@ const server = new ApolloServer(config);
 server.applyMiddleware({ app,});
 
 // The `listen` method launches a web server.
-app.listen({ port: 8080 },()=>{
+app.listen({ port: 80 },()=>{
     console.log(`🚀  Server ready at http://localhost/${server.graphqlPath}`,);
 })
