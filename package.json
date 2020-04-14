@@ -31,12 +31,13 @@
     "ts-loader": "^6.2.2",
     "ts-transform-graphql-tag": "^0.2.1",
     "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2"
   },
   "scripts": {
     "dev": "./node_modules/.bin/nodemon src/client/devServer.ts",
     "debug": "node $NODE_DEBUG_OPTION  --require ts-node/register src/client/devServer.ts",
-    "build": "./node_modules/.bin/tsc",
+    "build": "./node_modules/.bin/tsc && webpack --config ./src/client/config.js",
     "start": "./node_modules/.bin/pm2 start"
   },
   "repository": {
