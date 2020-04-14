@@ -24,7 +24,7 @@ const webpackConfig = {
     ]
   },
   resolve: {
-    extensions: [".ts", ".json", ".tsx", ".css"],
+    extensions: [".ts", ".json", ".tsx",".js",".jsx", ".css"],
   },
   plugins:[
     new HtmlWebpackPlugin({
