@@ -33,7 +33,7 @@ start() {
    else
       echo -n "Starting $APP_NAME ..."
       #CMD="nohup node hello.js > ${AONE_LOG_PATH}/${APP_NAME}.log 2>&1 &"
-      CMD="$APP_NAME ./lib/server/index.js --name ChartsQL"
+      CMD="$APP_NAME start ./lib/server/index.js --name ChartsQL"
       sh -c "$CMD"
       checkpid
       if [ $pid -ne 0 ]; then
