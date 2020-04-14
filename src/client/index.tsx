@@ -5,7 +5,7 @@ import {ApolloProvider} from '@apollo/react-hooks';
 import Books from './pages/books';
 
 const client = new ApolloClient({
-    uri: 'http://localhost:4000/graphql',
+    uri: '/graphql',
 });
 
 const App = () => (
