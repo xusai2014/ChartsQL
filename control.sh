@@ -41,6 +41,7 @@ start() {
          echo "(pid=$pid) [OK]"
          exit 0
       else
+         echo "(pid=$pid) [Failed]"
          echo "[Failed]"
          ps -ef
          exit 1
