@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 #应用名
-APP_NAME=./node_modules/.bin/pm2
-APP_CMD=/root/.pm2
+APP_NAME=pm2
 
 #应用根目录
 APP_HOME=${AONE_APP_PATH}/
@@ -16,7 +15,7 @@ cd $APP_HOME
 # 获取进程ID
 #============================================
 checkpid() {
-   pid=`pgrep ${APP_CMD}`
+   pid=`pgrep ${APP_NAME}`
    if [ -z $pid ]; then
       pid=0
    fi
@@ -34,9 +33,17 @@ start() {
    else
       echo -n "Starting $APP_NAME ..."
       #CMD="nohup node hello.js > ${AONE_LOG_PATH}/${APP_NAME}.log 2>&1 &"
-      CMD="$APP_NAME start ./lib/server/index.js --name ChartsQL"
+      CMD="$APP_NAME start lib/server/index.js --name ChartsQL"
       sh -c "$CMD"
-      exit 0
+      checkpid
+      if [ $pid -ne 0 ]; then
+         echo "(pid=$pid) [OK]"
+         exit 0
+      else
+         echo "[Failed]"
+         ps -ef
+         exit 1
+      fi
    fi
 }
 
