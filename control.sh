@@ -42,6 +42,8 @@ start() {
          exit 0
       else
          echo "(pid=$pid) [Failed]"
+         pgrep /root/.pm2
+         pgrep ./node_modules/.bin/pm2
          echo "[Failed]"
          ps -ef
          exit 1
