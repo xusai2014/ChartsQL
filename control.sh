@@ -2,7 +2,7 @@
 
 #应用名
 APP_NAME=./node_modules/.bin/pm2
-APP_CMD=pm2
+APP_CMD=/root/.pm2
 
 #应用根目录
 APP_HOME=${AONE_APP_PATH}/
@@ -42,8 +42,6 @@ start() {
          exit 0
       else
          echo "(pid=$pid) [Failed]"
-         pgrep /root/.pm2
-         pgrep ./node_modules/.bin/pm2
          echo "[Failed]"
          ps -ef
          exit 1
