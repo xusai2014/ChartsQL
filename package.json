@@ -38,7 +38,7 @@
     "dev": "./node_modules/.bin/nodemon src/client/devServer.ts",
     "debug": "node $NODE_DEBUG_OPTION  --require ts-node/register src/client/devServer.ts",
     "build": "./node_modules/.bin/tsc && webpack --config ./src/client/config.js",
-    "start": "./node_modules/.bin/pm2 start"
+    "start": "./node_modules/.bin/pm2 start ./lib/server/index.js --name QL"
   },
   "repository": {
     "type": "git",
