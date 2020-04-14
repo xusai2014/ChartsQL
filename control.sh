@@ -36,6 +36,7 @@ start() {
       #CMD="nohup node hello.js > ${AONE_LOG_PATH}/${APP_NAME}.log 2>&1 &"
       CMD="$APP_NAME start ./lib/server/index.js --name ChartsQL"
       sh -c "$CMD"
+      exit 0
    fi
 }
 
