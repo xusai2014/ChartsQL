@@ -3,7 +3,6 @@
 #应用名
 APP_NAME=./node_modules/.bin/pm2
 APP_CMD=pm2
-AONE_APP_PATH=./
 
 #应用根目录
 APP_HOME=${AONE_APP_PATH}/
