@@ -43,7 +43,7 @@ const webpackConfig = {
 webpackConfig['mode'] = "development";
 const compiler = webpack(webpackConfig);
 const app = express();
-app.get('/front', (req, res) => {
+app.get('/front/*', (req, res) => {
   const filename = path.join(compiler.outputPath, './index.html');
   compiler.outputFileSystem['readFile'](filename, (err, result) => {
     if (err) {
@@ -72,5 +72,5 @@ apollo.applyMiddleware({ app,});
 
 // The `listen` method launches a web server.
 app.listen({ port: 3001 },()=>{
-    console.log(`🚀  Server ready at http://localhost:4000${apollo.graphqlPath}`,);
+    console.log(`🚀  Server ready at http://localhost:3001/${apollo.graphqlPath}`,);
 })

@@ -42,6 +42,7 @@ const resolvers = {
             return result;
         },
         addHeatMap: async (source, args, {dataSources}) => {
+            console.log(args)
             const result = await dataSources.heatmapAPI.addHeatMap(args.heatMap)
             return result;
         }

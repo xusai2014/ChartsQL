@@ -1,6 +1,6 @@
 import React,{ useEffect } from 'react';
 import gql from 'graphql-tag';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation  } from '@apollo/react-hooks';
 
 const booksGql = gql`
   {
@@ -10,26 +10,18 @@ const booksGql = gql`
 }
 `;
 const heatmapGql = gql`
-    mutation{
-        addHeatMap(heatMap:{
-
-            viewport_position:"2322",
-            viewport_height:"2222",
-            viewport_width:"2222",
-            url:"2222",
-            title:"2222",
-            url_path:"2222",
-            event_duration:"2222",
-        })
+    mutation addHeatMap($heatMap:HeatMapParam){
+        addHeatMap(heatMap:$heatMap)
     }
 `
 
 
 export default  function(){
     const { loading, error, data ={books:[]} } = useQuery(booksGql);
+    const [ addHeatMap, { data:result }] = useMutation(heatmapGql);
     const { books = []} =data;
     useEffect(()=>{
-        x();
+        x(addHeatMap);
     });
 
     return (<div style={{height:'1000px',backgroundColor:'red'}}>
@@ -41,7 +33,7 @@ export default  function(){
     </div>)
 }
 
-function x() {
+function x(addHeatMap) {
     var scroll_delay_time = 4000;
     var scroll_event_duration = 18000;
     function init() {
@@ -104,6 +96,17 @@ function x() {
     }
 
     function post(type,data){
+        addHeatMap({variables:{
+            heatMap:{
+                viewport_position:String(data.$viewport_position),
+                viewport_height:String(data.$viewport_height),
+                viewport_width:String(data.$viewport_width),
+                url:String(data.$url),
+                title:String(data.$title),
+                url_path:String(data.$url_path),
+                event_duration:String(data.$event_duration),
+            },
+        }})
         console.log("________post_______",type, data);
     }
 
