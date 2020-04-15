@@ -2,7 +2,6 @@ import { MongoDataSource } from 'apollo-datasource-mongodb'
 
 export default class HeatMapData extends MongoDataSource<any,any> {
    async addHeatMap(heatMap) {
-       console.log(heatMap,'**********heatmap********');
    const res = await this.collection.insertOne(heatMap);
    return res.result.ok === 1;
   }
