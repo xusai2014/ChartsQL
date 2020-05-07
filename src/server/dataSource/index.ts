@@ -10,6 +10,7 @@ class LoginAPI extends RESTDataSource {
     }
 
     host = 'http://aicloudauthgateway-test-8785.en-315.svc:80';
+    //host = 'http://newtestbigdata.yz.test.autohome.com.cn';
 
     async getKaptcha() {
         // 卧槽 我差点二了
@@ -21,7 +22,7 @@ class LoginAPI extends RESTDataSource {
     }
 
     async loginWithPwd({account, pwd, captcha}) {
-        return this.post(`/userlogin?username=${account}&password=${pwd}&captcha=${captcha}`, {}, {
+        return await this.post(`/userlogin?username=${account}&password=${pwd}&captcha=${captcha}`, {}, {
             headers: {
 
                 "Accept":"*/*",

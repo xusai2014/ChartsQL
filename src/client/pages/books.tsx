@@ -32,7 +32,7 @@ export default  function(){
         x();
     });
 
-    return (<div style="height:1000px;background-color:red;">
+    return (<div>
         {
             books.map((v:any)=>{
             return <span>{v.title}</span>;
