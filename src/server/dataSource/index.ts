@@ -9,7 +9,7 @@ class LoginAPI extends RESTDataSource {
         this.baseURL = `${this.host}/login`;
     }
 
-    host = '';
+    host = 'http://aicloudauthgateway-test-8785.en-315.svc:80';
 
     async getKaptcha() {
         // 卧槽 我差点二了
