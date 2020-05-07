@@ -6,7 +6,7 @@ class LoginAPI extends RESTDataSource {
     constructor() {
         super();
 
-        this.baseURL = `${this.host}/login`;
+        this.baseURL = `http://aicloudauthgateway-test-8785.en-315.svc:80/login`;
     }
 
     host = 'http://aicloudauthgateway-test-8785.en-315.svc:80';
